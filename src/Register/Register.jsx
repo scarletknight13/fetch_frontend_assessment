@@ -57,7 +57,8 @@ function Register() {
         if(validateForm()){
             console.log(values)
             // console.log(values);
-    
+
+            
             // send new user object to api 
             const response = await fetch('https://frontend-take-home.fetchrewards.com/form', {
                 method: 'POST', 
@@ -66,6 +67,7 @@ function Register() {
                 },
                 body: JSON.stringify(values),
             });
+            // check if user was sent to api successfully
             if(response.status === 201){
                 setValues({ name: '', password: '', email: '', occupation: '', state: '', confirmPassword : ''});
                 toast.success('Successfully Created User', toastOptions);
