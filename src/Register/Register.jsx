@@ -34,7 +34,9 @@ function Register() {
     function handleChange(e){
         setValues({ ...values, [e.target.name]: e.target.value });
     };
-
+    function clearValues(){
+        setValues({ name: '', password: '', email: '', occupation: '', state: '', confirmPassword : ''});
+    }
     // function checks to ensure all fields in the form have valid values
     function validateForm(){
         const { name, password, email, state, occupation, confirmPassword } = values;
@@ -75,7 +77,6 @@ function Register() {
             });
             // check if user was sent to api successfully
             if(response.status === 201){
-                setValues({ name: '', password: '', email: '', occupation: '', state: '', confirmPassword : ''});
                 toast.success('Successfully Created User', toastOptions);
             }
             else{
@@ -83,6 +84,7 @@ function Register() {
             }
             // console.log('response: ', response);
         }
+        clearValues();
     }
     return (
     <form className='Register' onSubmit={(e) => handleSubmit(e)} autoComplete='none'>
@@ -90,41 +92,41 @@ function Register() {
         <div className='name-email-container row-container'>
             <div className='name-container field-container'>
                 <label htmlFor="name">Full Name</label>
-                <input value={values.name}type="text" name='name' id='name' onChange={(e) => handleChange(e)}/>
+                <input role='inputfield' value={values.name}type="text" name='name' id='name' onChange={(e) => handleChange(e)}/>
             </div>
             <div className='email-container field-container'>
                 <label htmlFor="email">Email</label>
-                <input value={values.email} type="email" name='email' id='email' onChange={(e) => handleChange(e)}/>
+                <input role='inputfield' value={values.email} type="email" name='email' id='email' onChange={(e) => handleChange(e)}/>
             </div>
         </div>
         <div className='password-confirmpassword-container row-container'>
             <div className='password-container field-container'>
-                <label htmlFor="password">Password</label>
-                <input value={values.password} type="password" name='password' id='password' onChange={(e) => handleChange(e)}/>
+                <label  htmlFor="password">Password</label>
+                <input role='inputfield' data-testid="password" value={values.password} type="password" name='password' id='password' onChange={(e) => handleChange(e)}/>
             </div>
             <div className='confirm-password-container field-container'>
-                <label htmlFor="confirm-password">Confirm Password</label>
-                <input value={values.confirmPassword} type="password" name='confirmPassword' id='confirm-password' onChange={(e) => handleChange(e)}/>
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input role='inputfield' value={values.confirmPassword} type="password" name='confirmPassword' id='confirmPassword' onChange={(e) => handleChange(e)}/>
             </div>
         </div>
         <div className='occupation-state-container row-container'>
             <div className='occupation-container field-container'>
                 <label htmlFor="occupation">Occupation</label>
-                <select value={values.occupation} name="occupation" id="occupation" onChange={(e) => handleChange(e)}>
+                <select role='inputfield' value={values.occupation} name="occupation" id="occupation" onChange={(e) => handleChange(e)}>
                     <option value="">choose occupation</option>
                     {formattedOccupations ? formattedOccupations : ''}
                 </select>
             </div>
             <div className='state-container field-container'>
-                <label htmlFor="confirm-password">State</label>
-                <select value={values.state} name="state" id="state" onChange={(e) => handleChange(e)}>
+                <label htmlFor="state">State</label>
+                <select role='inputfield' value={values.state} name="state" id="state" onChange={(e) => handleChange(e)}>
                     <option value="">choose state</option>
                     {formattedStates ? formattedStates : ''}
                 </select>
             </div>
         </div>
         <button className='submitButton' type='submit' name='submitButton'>Submit</button>
-        <ToastContainer />
+        <ToastContainer data-testid='toast-container'/>
     </form>
     )
 }
