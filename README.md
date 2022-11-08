@@ -1,5 +1,5 @@
 # Fetch Frontend Assessment
-Website: https://jbroxton-fetch-assessment.netlify.app/
+Link to Website: https://jbroxton-fetch-assessment.netlify.app/
 
 ## Project Description
 This is my attempt at the frontend assessment for Fetch Reward's Apprenticeship. The excersie wanted me to create a user login form that took in five inputs. These inputs include : Full name, Email, Password, Occupation, and State. The excerise required me to make an api call to obtain a list of occupations and states the user 
