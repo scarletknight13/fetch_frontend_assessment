@@ -30,35 +30,42 @@ function Register() {
             setFormattedStates(apiData.states.map((state) => <option value={state['name']}> {state['name']}</option>));
         }
     }, [apiData])
-    // when the user presses submit button
+    // when a user changes a field this function updates useState variable that holds user data 
     function handleChange(e){
         setValues({ ...values, [e.target.name]: e.target.value });
-      };
+    };
+
+    // function checks to ensure all fields in the form have valid values
     function validateForm(){
         const { name, password, email, state, occupation, confirmPassword } = values;
-        console.log(password.length)
+        // console.log(password.length)
+
+        // check if any field is empty
         if (name === "" || password === "" || email === "" || state === '' || occupation === '') {
             toast.error("All fields are required", toastOptions);
             // console.log('here');
             return false;
         }
+        // checks if password matches confirmPassword
         else if(password !== confirmPassword){
             toast.error("passwords must match", toastOptions);
             return false;
         }
+        //checks if password length is valid
         else if(password.length < 8 || password.length > 15){
             toast.error("Password must be 8-15 characters", toastOptions);
             return false;
         }
         return true;
     }
+    // when the user presses submit button
     async function handleSubmit(e){
         e.preventDefault();
         if(validateForm()){
             console.log(values)
             // console.log(values);
 
-            
+
             // send new user object to api 
             const response = await fetch('https://frontend-take-home.fetchrewards.com/form', {
                 method: 'POST', 
@@ -75,8 +82,7 @@ function Register() {
             else{
                 toast.error('Error has occurred. Try again later', toastOptions);
             }
-            console.log('response: ', response);
-
+            // console.log('response: ', response);
         }
     }
     return (
@@ -85,11 +91,11 @@ function Register() {
         <div className='name-email-container row-container'>
             <div className='name-container field-container'>
                 <label htmlFor="name">Full Name</label>
-                <input value={values.name}type="text" name='name' id='name' onChange={(e) => handleChange(e)} autoComplete='none'/>
+                <input value={values.name}type="text" name='name' id='name' onChange={(e) => handleChange(e)}/>
             </div>
             <div className='email-container field-container'>
                 <label htmlFor="email">Email</label>
-                <input value={values.email} type="email" name='email' id='email' onChange={(e) => handleChange(e)} autoComplete={'none'}/>
+                <input value={values.email} type="email" name='email' id='email' onChange={(e) => handleChange(e)}/>
             </div>
         </div>
         <div className='password-confirmpassword-container row-container'>
@@ -118,7 +124,7 @@ function Register() {
                 </select>
             </div>
         </div>
-        <button className='submitButton' type='submit' name='button'>Submit</button>
+        <button className='submitButton' type='submit' name='submitButton'>Submit</button>
         <ToastContainer />
     </form>
     )
