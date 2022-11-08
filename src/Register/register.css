@@ -1,0 +1,39 @@
+.Register{
+    width: 50vw;
+    height: 50vh;
+    background-color: #FFEA77;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+.row-container{
+    /* margin-left: 2vw; */
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    /* justify-content: space-around; */
+    gap: 10vw;
+    margin-bottom: 3vh;
+}
+label{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.718);
+}
+.field-container{
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+.submitButton{
+    width: 10vw;
+    height: 5vh;
+    color: gray;
+    border-radius: 10px;
+    border: none;
+}
+.submitButton:hover{
+    transform: scale(1.2);
+}
