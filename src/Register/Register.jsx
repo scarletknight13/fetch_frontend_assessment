@@ -62,7 +62,6 @@ function Register() {
     async function handleSubmit(e){
         e.preventDefault();
         if(validateForm()){
-            console.log(values)
             // console.log(values);
 
 
