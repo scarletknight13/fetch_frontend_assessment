@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Fetch Frontend Assessment
+Link to Website: https://jbroxton-fetch-assessment.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+This is my attempt at the frontend assessment for Fetch Reward's Apprenticeship. The excersie wanted me to create a user login form that took in five inputs. These inputs include : Full name, Email, Password, Occupation, and State. The excerise required me to make an api call to obtain a list of occupations and states the user 
+could choose between for the corresponding fields. After the user successfully completely the field I was required to make another api call with an object with all the 
+user data.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Technologies Used
 
-### `npm start`
+For this excerise I choose to use the React Framework. I also used basic CSS to style the form. I used Jest and the react-testing-library for some automated testing.
+I deployed my site with netlify.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Experience
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - User is Greeted with a one page website with si mple form that has 6 input fields and a submit button. Those fields include Full Name, Email, Password, Confirm Password, Occupation, and State. 
+ - The occupation and state fields are drop down menus that have the list of choices that I imported from the api.
+ - If any field is left blank when the button is clicked the site with display an error message.
+ - If the email is not valid an error message will be displayed.
+ - If the password and confirm password fields do not match the user will be displayed an error message. 
+ - If the password is not between 8-15 characters the user will recieve an error message.
+ - If the form is filled out correctly the user will recieve an success message and their user data will be sent to the api.
+ - Website is also responsive so no matter what device the user is on they will be able to fill out the form.
+ 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
